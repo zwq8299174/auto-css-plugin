@@ -516,7 +516,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 }
 `
 
-    > #### 位置及显示相关
+            > #### 位置及显示相关
 
 -   定位
 
@@ -732,14 +732,13 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
     ```
 -   边框类型 #### (border-style|bs)-(参数)
     `css
-    .x-border-style-dashed {
-    	border-style: dashed;
-    }
-    .x-bs-dotted {
-    	border-style: dotted;
-    }
-    `
-    > #### GAP 布局相关
+.x-border-style-dashed {
+	border-style: dashed;
+}
+.x-bs-dotted {
+	border-style: dotted;
+}
+` > #### GAP 布局相关
 -   间距
 
     #### gap-((数值(单位)?)|其他参数)
@@ -777,18 +776,18 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 
 -   行间距 #### row-gap-((数值(单位)?)|其他参数)
     `css
-    .x-row-gap-20 {
-    	row-gap: 20px;
-    }
-    .x-row-gap-20p {
-    	row-gap: 20%;
-    }
-    .x-row-gap-unset {
-    	row-gap: unset;
-    }
-    `
+.x-row-gap-20 {
+	row-gap: 20px;
+}
+.x-row-gap-20p {
+	row-gap: 20%;
+}
+.x-row-gap-unset {
+	row-gap: unset;
+}
+`
 
-    > #### 其他属性
+        > #### 其他属性
 
 -   图片填充
 
@@ -913,7 +912,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
     ```javascript
     modifyRules: {
         /**
-        * 如需覆盖自带属性 则属性名 相同
+         * 如需覆盖自带属性 则属性名 相同
         * 此处值 为 object 或者 函数,函数必须返回相同格式的对象
         * 函数入参如下:
         * config 配置参数
@@ -924,37 +923,50 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
         * NONNEGATIVE_NUMBER_REGEX_STR 捕获数字的正则字符串
         * DIRECTION_MAP 方向定义的 map
         */
-        primaryBox: ({ config, textToRgbText, getColorsKey, getColors, UNIT_ENUM_STR, NONNEGATIVE_NUMBER_REGEX_STR, DIRECTION_MAP }) => {
-			return {
-                /**
-                * 此处必须存在 regExp 为正则表达式 或 函数 函数必须返回正则表达式
-                * 此处必须存在 render 函数
-                * 入参 为 字符串mathch 正则表达式的结果 (只有匹配上的才会调用render)
-                * render 函数必须返回 name:String order:Number css:Array<String>
-                * 将会使用 render 返回的结果 生成css
-                * 如果导出 num 则会按照num 组内渲染排序 与其他css 排序无关
-                * 如果捕获组有 unit 会自动处理单位问题
-                * order是权重值,order越大,生成的css越靠后,覆盖前面的css
-                */
-                regExp() {
-					return new RegExp(`^${config.prefix}-primary-box$`);
-				},
-				render() {
-					return {
-						name: 'primaryBox',
-						order: 900,
-						css: ['height:100px', 'width:100px', 'border-radius:20px', 'background-color:red'],
-					};
-				},
-				snippets: {
-					//代码提示
-					通用盒子: {
-						prefix: `${config.prefix}-primary-box`, //代码提示触发前缀
-						body: `${config.prefix}-primary-box`, //代码提示内容
-					},
-				},
-			};
-		},
+        primaryBox: ({
+            config,
+            textToRgbText,
+            getColorsKey,
+            getColors,
+            UNIT_ENUM_STR,
+            NONNEGATIVE_NUMBER_REGEX_STR,
+            DIRECTION_MAP
+        }) => {
+            return {
+            /**
+             * 此处必须存在 regExp 为正则表达式 或 函数 函数必须返回正则表达式
+            * 此处必须存在 render 函数
+            * 入参 为 字符串mathch 正则表达式的结果 (只有匹配上的才会调用render)
+            * render 函数必须返回 name:String order:Number css:Array<String>
+            * 将会使用 render 返回的结果 生成css
+            * 如果导出 num 则会按照num 组内渲染排序 与其他css 排序无关
+            * 如果捕获组有 unit 会自动处理单位问题
+            * order是权重值,order越大,生成的css越靠后,覆盖前面的css
+            */
+            regExp() {
+                return new RegExp(`^${config.prefix}-primary-box$`);
+            },
+            render() {
+                return {
+                name: "primaryBox",
+                order: 900,
+                css: [
+                    "height:100px",
+                    "width:100px",
+                    "border-radius:20px",
+                    "background-color:red"
+                ]
+                };
+            },
+            snippets: {
+                //代码提示
+                '通用盒子': {
+                    prefix: `${config.prefix}-primary-box`, //代码提示触发前缀
+                    body: `${config.prefix}-primary-box` //代码提示内容
+                    }
+                }
+            };
+        };
     },
     mediaQueries: {
         // 前面为前缀 后面为媒体属性
@@ -965,28 +977,28 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
         xl: '(min-width: 1280px)'
     },
     //单位转换配置
-	//可以是对象或者函数
-	// toAnyConfig: {
-	//   unit: 'rem', // 默认转换后的单位
-	//   rootValue: 16, // 表示根元素字体大小或基于输入参数返回根元素字体大小 1px -> 1/16rem
-	//   unitPrecision: 5, // 允许小数单位精度
-	//   minPixelValue: 1 // 不会被转换的最小值
-	// },
-	//函数必须返回num、unit字段
-	toAnyConfig: function ({ num, unit }) {
-	 	if (num > 1 && (unit == 'px' || unit == undefined)) {
-	 		return {
-	 			num: (num / 100).toFixed(4),
-	 			unit: 'rem',
-	 		};
-	 		// return {
-	 		// 	num: (num / 375).toFixed(4),
-	 		// 	unit: 'vw',
-	 		// };
-	 	}
-	 	return {
-	 		num,
-	 		unit,
-	 	};
-	},
+    //可以是对象或者函数
+    // toAnyConfig: {
+    //   unit: 'rem', // 默认转换后的单位
+    //   rootValue: 16, // 表示根元素字体大小或基于输入参数返回根元素字体大小 1px -> 1/16rem
+    //   unitPrecision: 5, // 允许小数单位精度
+    //   minPixelValue: 1 // 不会被转换的最小值
+    // },
+    //函数必须返回num、unit字段
+    toAnyConfig: function ({ num, unit }) {
+     	if (num > 1 && (unit == 'px' || unit == undefined)) {
+     		return {
+     			num: (num / 100).toFixed(4),
+     			unit: 'rem',
+     		};
+     		// return {
+     		// 	num: (num / 375).toFixed(4),
+     		// 	unit: 'vw',
+     		// };
+     	}
+     	return {
+     		num,
+     		unit,
+     	};
+    },
     ```
