@@ -622,7 +622,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
     #### vertical-align-(参数)
     ```css
     .x-vertical-align-top {
-    vertical-align: top;
+        vertical-align: top;
     }
     ```
 
