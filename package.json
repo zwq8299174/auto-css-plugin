@@ -28,7 +28,6 @@
         "@rollup/plugin-replace": "^3.0.0",
         "bumpp": "^7.1.1",
         "jest": "^26.0.1",
-        "mockjs": "^1.1.0",
         "rollup": "^2.23.0",
         "rollup-plugin-terser": "^6.1.0"
     },
