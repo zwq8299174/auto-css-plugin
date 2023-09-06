@@ -23,7 +23,7 @@
 
 ```text
 + 伪类后跟任意属性
-hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-red active:w-233
+hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:x-c-red active:x-w-233
 ```
 
 ### 媒体查询约定
@@ -34,7 +34,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   md : '(min-width: 768px)',
   lg : '(min-width: 1024px)',
   xl : '(min-width: 1280px)'
-  如 sm@bg-fff lg@w-2333 xl@m-t-10
+  如 sm@bg-fff lg@x-w-2333 xl@x-m-t-10
   即可在不同屏幕大小中正确使用媒体查询支持全部属性 如需要与伪类配合使用 语法如下 <媒体查询>@<伪类>:<属性>
 ```
 
@@ -43,7 +43,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 ```text
 + m-16  16代表正数
 + m-m-16 -m-16代表负数(部分属性支持)
-+ 数值全部支持小数 如 m-t-0.222vh w-33.333333p
++ 数值全部支持小数 如 x-m-t-0.222vh x-w-33.333333p
 ```
 
 ### 单位约定

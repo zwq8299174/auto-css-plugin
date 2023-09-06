@@ -1,5 +1,7 @@
-# auto-css-plugin 根据className生成样式，便捷超乎想象。
+# auto-css-plugin 根据className生成样式,便捷超乎想象。
 
+## DEMO
+[现在体验](https://zwq8299174.github.io/auto-css-plugin/)
 
 ## 如何使用
 
@@ -28,10 +30,10 @@ const AutoCssPlugin = require('auto-css-plugin');
 
 ```javascript
 const AutoCssPlugin = require('auto-css-plugin/vite');
-{
+export default defineConfig({
     // ... other config settings
-    plugins: [new AutoCssPlugin()];
-}
+    plugins: [AutoCssPlugin()],
+});
 ```
 
 ### CDN 引入
@@ -39,7 +41,7 @@ const AutoCssPlugin = require('auto-css-plugin/vite');
 ```html
 <html>
     <head>
-        <script src="https://cdn.jsdelivr.net/npm/auto-css-plugin/script/auto-css.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/auto-css-plugin@1.0.0/dist/script/auto-css.js"></script>
     </head>
     <body></body>
     <script>
