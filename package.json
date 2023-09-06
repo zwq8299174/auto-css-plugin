@@ -8,6 +8,12 @@
         "gen-snippets": "./dist/webpack/gen-snippets"
     },
     "main": "./dist/webpack/index.js",
+    "module": "./dist/webpack/index.js",
+    "exports": {
+        "./webpack": "./dist/webpack/index.js",
+        "./vite": "./dist/vite/index.js",
+        "./script": "./dist/script/index.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/zwq8299174/auto-css-plugin.git"
@@ -17,7 +23,7 @@
         "README.md"
     ],
     "author": "7*<zwq8299174@gmail.com.com>",
-    "homepage": "https://github.com/macheteHot/css-generator-plugin#readme",
+    "homepage": "https://github.com/zwq8299174/auto-css-plugin/blob/main/README.md",
     "devDependencies": {
         "@babel/plugin-transform-named-capturing-groups-regex": "^7.14.9",
         "@robmarr/rollup-plugin-shebang": "^1.0.1",
@@ -33,9 +39,9 @@
     },
     "dependencies": {
         "chokidar": "^3.5.3",
-		"commander": "^11.0.0",
-		"glob": "^10.3.3",
-		"shelljs": "^0.8.5"
+        "commander": "^11.0.0",
+        "glob": "^10.3.3",
+        "shelljs": "^0.8.5"
     },
     "scripts": {
         "build": "rollup -c && node build/index.js",

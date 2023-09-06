@@ -3,11 +3,11 @@ import { setConfig, getConfig } from './config';
 import { EXT_NAME } from './constant';
 
 module.exports = function vitePlugin() {
-	const gcssConfig = readConfigFile();
+	const autoCssConfig = readConfigFile();
 	return {
 		name: 'vite-plugin',
 		config(config) {
-			setConfig(gcssConfig);
+			setConfig(autoCssConfig);
 			init();
 			return config;
 		},

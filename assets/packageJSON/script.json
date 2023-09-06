@@ -1,6 +1,6 @@
 {
     "name": "css-generator-script",
-    "description": "css generator by class",
+    "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination",
     "version": "$VAR$",
     "license": "$VAR$",
     "bin": {

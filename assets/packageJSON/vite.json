@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-css-generator",
-    "description": "css file generator only write class name",
+    "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination",
     "version": "$VAR$",
     "license": "$VAR$",
     "bin": {

@@ -3,7 +3,7 @@
 
 ## 如何使用
 
-插件支持webpack、vue-cli、CDN模式引用，具体用法如下：
+插件支持webpack、vue-cli、vite、CDN模式引用，具体用法如下：
 
 ## 安装依赖
 
@@ -24,6 +24,15 @@ const AutoCssPlugin = require('auto-css-plugin');
 }
 ```
 
+#### vite
+
+```javascript
+const AutoCssPlugin = require('auto-css-plugin/vite');
+{
+    // ... other config settings
+    plugins: [new AutoCssPlugin()];
+}
+```
 
 ### CDN 引入
 

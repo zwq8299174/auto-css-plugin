@@ -1,6 +1,6 @@
 {
     "name": "auto-css-plugin",
-    "description": "write class name,auto generate css",
+    "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination",
     "version": "$VAR$",
     "license": "$VAR$",
     "bin": {
