@@ -21,7 +21,7 @@ export const MEDIA_QUERIES = 'mediaQueries';
 
 export const DISPLAY_ENUM = ['unset', 'revert', 'initial', 'inherit', 'list-item', 'table-row', 'table', 'contents', 'none', 'flow-root', 'inline-grid', 'grid', 'inline-flex', 'flex', 'inline-block', 'inline', 'block'];
 
-export const JUSTIFY_CONTENT_ENUM = ['left', 'right', 'center', 'start', 'end', 'flex-start', 'flex-end', 'left', 'right', 'space-between', 'between', 'space-around', 'around', 'space-evenly', 'evenly', 'stretch', 'inherit', 'initial', 'unset', 'normal'];
+export const JUSTIFY_CONTENT_ENUM = ['center', 'start', 'end', 'flex-start', 'flex-end', 'left', 'right', 'space-between', 'between', 'space-around', 'around', 'space-evenly', 'evenly', 'stretch', 'inherit', 'initial', 'unset', 'normal'];
 export const ALIGN_ITEMS_ENUM = ['baseline', 'center', 'end', 'flex-end', 'flex-start', 'inherit', 'initial', 'normal', 'self-end', 'self-start', 'start', 'stretch', 'unset'];
 
 export const ALIGN_CONTENT_ENUM = ['flex-end', 'flex-start', 'center', 'inherit', 'initial', 'stretch', 'space-between', 'space-around', 'space-evenly', 'end', 'start', 'between', 'around', 'evenly'];

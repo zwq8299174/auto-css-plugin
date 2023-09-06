@@ -66,7 +66,8 @@ export function filterClass(classStr) {
 	const ruleList = Object.values({ ...rules, ...getConfig(MODIFY_RULES) });
 	for (let i = 0; i < ruleList.length; i++) {
 		let rule = ruleList[i];
-		rule = isFunction(rule) ? rule(modifyUtils) : rule;
+		const config = getConfig('ALL');
+		rule = isFunction(rule) ? rule({ config, ...modifyUtils }) : rule;
 		const reg = isFunction(rule.regExp) ? rule.regExp() : rule.regExp;
 		const res = source.match(reg);
 		if (res !== null) {
@@ -75,14 +76,14 @@ export function filterClass(classStr) {
 
 			if (isObject(res.groups)) {
 				if (is2any && num) {
-                    if(isFunction(toAnyConfig)){
-                        Object.assign(res.groups, toAnyConfig(res.groups));
-                    }else{
-                        Object.assign(res.groups, {
-                            num: toAny(num),
-                            unit: toAnyConfig.unit,
-                        });
-                    }
+					if (isFunction(toAnyConfig)) {
+						Object.assign(res.groups, toAnyConfig(res.groups));
+					} else {
+						Object.assign(res.groups, {
+							num: toAny(num),
+							unit: toAnyConfig.unit,
+						});
+					}
 				} else {
 					Object.assign(res.groups, { unit: unit1 });
 				}

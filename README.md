@@ -1,103 +1,153 @@
-# css-generator-plugin 自动生成 css 文件，高效开发页面
+# auto-css-plugin 根据className生成样式，便捷超乎想象。
 
-## [在线尝试](https://machetehot.github.io/css-generator-plugin/)
 
-## [更新记录](./CHANGE.md)
+## 如何使用
 
-### 如何使用
+插件支持webpack、vue-cli、CDN模式引用，具体用法如下：
 
--   安装依赖
+## 安装依赖
 
-    ## webpack 小程序用户
+```shell
+npm i auto-css-plugin -D
+    or
+yarn add auto-css-plugin -D
+```
 
-    ```shell
-    npm i css-generator-plugin -D
-      or
-    yarn add css-generator-plugin -D
-    ```
+### 配置
+#### webpack、vue-cli
 
-    ### webpack 配置
+```javascript
+const AutoCssPlugin = require('auto-css-plugin');
+{
+    // ... other config settings
+    plugins: [new AutoCssPlugin()];
+}
+```
 
-    ```javascript
-    const CssGeneratorPlugin = require('css-generator-plugin');
-    {
-    	// ... other config settings
-    	plugins: [new CssGeneratorPlugin()];
-    }
-    ```
 
-    在项目入口文件中引入 生成的 css
+### CDN 引入
 
-    ```js
-    import '@/style/auto.css';
-    ```
-
-    ***
-
-    ## vite 用户
-
-    ```shell
-    npm i vite-plugin-css-generator -D
-      or
-    yarn add vite-plugin-css-generator -D
-    ```
-
-    ### vite 配置
-
-    ```javascript
-    import CssGenerator from 'vite-plugin-css-generator';
-    export default defineConfig({
-    	// ... other config settings
-    	plugins: [CssGenerator()],
-    });
-    ```
-
-    在项目入口文件中引入 生成的 css
-
-    ```js
-    import '@/style/auto.css';
-    ```
-
-    ***
-
-    ## 生成器 用户
-
-    ```shell
-    npm i css-generator-script
-      or
-    yarn add css-generator-script
-    ```
-
-    项目入口中引用
-
-    ```js
-    // Gcss(<配置项>) 写入配置项
-    import Gcss from 'css-generator-script';
-    new Gcss({}).start();
-    ```
-
-    ***
-
-    ### CDN 引入
-
-    ```html
-    <html>
-    	<head>
-    		<script src="https://cdn.jsdelivr.net/npm/css-generator-script/gcss.js"></script>
-    	</head>
-    	<body></body>
-    	<script>
-    		// {} is config
-    		new window.Gcss({}).start();
-    	</script>
-    </html>
-    ```
+```html
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/auto-css-plugin/script/auto-css.js"></script>
+    </head>
+    <body></body>
+    <script>
+        // {} is config
+        new window.AutoCss({}).start();
+    </script>
+</html>
+```
 
 ---
 
-### 生成代码提示文件
+## 配置项
 
-将会在根目录生成 auto-use-snippets.css 作为代码提示文件
+webpack 或 vue-cli 用户请 下载本项目中配置文件 **[.auto.css.js](./.auto.css.js)** 到项目根目录
+
+cdn 用户请在函数中传入配置
+
+具体配置如下
+``` javascript
+module.exports = {
+	prefix: 'x', // class前缀,防止和项目中其他样式及UI框架样式冲突，默认是'x'
+	beforeStr: '', // css 文本嵌入的文字
+	afterStr: '', // css结束嵌入的文字
+	/**
+	 * 颜色配置 默认包含如下值
+	 * red         : '#f00'
+	 * white       : '#fff'
+	 * black       : '#000'
+	 * blue        : '#00f'
+	 * transparent : 'transparent'
+	 * 可以覆盖写入 相关颜色可自定义 如 bg-red bg-diy
+	 */
+	colors: {
+		primary: '#2788e9',
+		secondary: '#4d99ff',
+		deep: '#016eff',
+		success: '#40bb3f',
+		warning: '#faad14',
+		error: '#fe0000',
+		info: '#909399',
+		gray: '#f5f5f5',
+		transparent: 'transparent',
+	},
+	borderColor: '#ddd',
+	dirPath: 'src', // 必填项。源码根目录(必须存在此目录),默认为src,开发热更新使用。
+	//generate: 'src/styles/auto.css', // 可选配置,样式文件生成地址,为空则直接注入到html文件中,不为空则将样式文件生成到指定位置,需自行引入。
+	type: 'vue', // 必填项。项目类型 vue | react | d-mini-program (钉钉小程序) | wx-mini-program(微信小程序) | html
+	pageWidth: '750', // 可选项。默认页面宽度 750，单位像素
+	/**
+	 * 可覆写规则 或自定义规则 详见进阶使用 详情请看规则进阶
+	 */
+	modifyRules: {
+		primaryBox: () => {
+			return {
+				regExp: new RegExp(`^x-primary-box$`),
+				render() {
+					return {
+						name: 'primaryBox',
+						order: 900,
+						css: ['height:100px', 'width:100px', 'border-radius:20px', 'background-color:red'],
+					};
+				},
+				snippets: {
+					//代码提示
+					通用盒子: {
+						prefix: `x-primary-box`, //代码提示触发前缀
+						body: `x-primary-box`, //代码提示内容
+					},
+				},
+			};
+		},
+	},
+	/**
+	 * 自定义媒体查询
+	 * 可覆写或添加规则 以下为默认配置 如 md@bg-red or diy@bg-red
+	 * sm : '(min-width: 640px)',
+	 * md : '(min-width: 768px)',
+	 * lg : '(min-width: 1024px)',
+	 * xl : '(min-width: 1280px)'
+	 */
+	mediaQueries: {},
+	/**
+	 *  是否为所有css 添加 important
+	 */
+	important: true, // 默认为 false
+	unit: 'px', // 可选项。默认单位px,p是百分比
+	//单位转换配置
+	//可以是对象或者函数
+	// toAnyConfig: {
+	//   unit: 'rem', // 默认转换后的单位
+	//   rootValue: 16, // 表示根元素字体大小或基于输入参数返回根元素字体大小 1px -> 1/16rem
+	//   unitPrecision: 5, // 允许小数单位精度
+	//   minPixelValue: 1 // 不会被转换的最小值
+	// },
+	//函数必须返回num、unit字段
+	// toAnyConfig: function ({ num, unit }) {
+	// 	if (num > 1 && (unit == 'px' || unit == undefined)) {
+	// 		return {
+	// 			num: (num / 100).toFixed(4),
+	// 			unit: 'rem',
+	// 		};
+	// 		// return {
+	// 		// 	num: (num / 375).toFixed(4),
+	// 		// 	unit: 'vw',
+	// 		// };
+	// 	}
+	// 	return {
+	// 		num,
+	// 		unit,
+	// 	};
+	// },
+};
+```
+
+## 生成代码提示文件
+
+将会在根目录生成 auto-css-snippets.code-snippets 作为代码提示文件
 
 ```
 npx gen-snippets
@@ -105,21 +155,5 @@ npx gen-snippets
 yarn gen-snippets
 ```
 
-### 配置项
-
-webpack 或 vite 用户请 下载本项目中配置文件 **[.css.generator.js](./.css.generator.js)** 到项目根目录
-
-cdn 或生成器用户 请在 函数中传入配置
-
-````
-
-### 命令行启动(如小程序类和老项目，无webpack)
-+ 运行指令
-```text
-npx css-generator
-  or
-yarn css-generator
-
-````
 
 ## [规则说明与进阶使用](./RULE.md)

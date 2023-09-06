@@ -54,6 +54,8 @@ export function getConfig(str) {
 			return programConfig[PAGE_WIDTH] || 750;
 		case DIR_PATH:
 			return programConfig[DIR_PATH] || 'src';
+        case 'ALL': //所有配置项
+            return programConfig;
 		default: // dirPath generate  等项目配置
 			return programConfig[str];
 	}

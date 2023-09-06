@@ -1,7 +1,7 @@
 /**
  * order 280
  */
-import { PREFIX, UNIT_ENUM_STR, NONNEGATIVE_NUMBER_REGEX_STR, UNIT_ENUM, toRegexStr, genSnippets } from '../constant';
+import { PREFIX, UNIT_ENUM_STR, NONNEGATIVE_NUMBER_REGEX_STR, UNIT_ENUM, genSnippets } from '../constant';
 import { getConfig } from '../config';
 const ruleName = 'flex-basis'; //属性名称
 

@@ -4,7 +4,7 @@
 import { PREFIX, UNIT_ENUM_STR, UNIT_ENUM, NONNEGATIVE_NUMBER_REGEX_STR, toRegexStr, genSnippets } from '../constant';
 import { getConfig } from '../config';
 const ruleName = 'font-size'; //属性名称
-const className = ['font', 'fs', 'f'];
+const className = ['font', 'fs', 'f','font-size'];
 
 export default {
 	regExp(){

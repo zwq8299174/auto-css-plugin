@@ -4,7 +4,7 @@
 import { ALIGN_CONTENT_ENUM_STR, ALIGN_CONTENT_ENUM, PREFIX, toRegexStr } from '../constant';
 import { getConfig } from '../config';
 const ruleName = 'align-content'; //属性名称
-const className = ['align-content', 'ac'];
+const className = ['align-content', 'ac', 'content'];
 
 function getValue(align) {
 	if (align == 'end') {

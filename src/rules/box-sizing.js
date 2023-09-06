@@ -8,7 +8,7 @@ import { getConfig } from '../config';
 export default {
 	regExp() {
 		const prefix = getConfig(PREFIX);
-		return new RegExp(`^${prefix}-box-sizing-(?<value>content-box|border-box)$`);
+		return new RegExp(`^${prefix}-(box-sizing|box)-(?<value>content-box|border-box)$`);
 	},
 	render({ groups }) {
 		const { value } = groups;

@@ -1,58 +1,58 @@
-export { default as alignContent } from './align-content';
-export { default as alignItems } from './align-items';
-export { default as alignSelf } from './align-self';
-export { default as bold } from './bold';
-export { default as borderRadius } from './border-radius';
-export { default as borderStyle } from './border-style';
-export { default as border } from './border';
-export { default as boxSizing } from './box-sizing';
-export { default as circle } from './circle';
-export { default as clearfix } from './clearfix';
-export { default as color } from './color';
-export { default as columnGap } from './column-gap';
-export { default as cursor } from './cursor';
-export { default as display } from './display';
-export { default as flexBasis } from './flex-basis';
-export { default as flexCenter } from './flex-center';
-export { default as flexDirection } from './flex-direction';
-export { default as flexJustAli } from './flex-justify-align';
-export { default as flexNum } from './flex-num';
-export { default as flexShrinkAndGrow } from './flex-shrink-grow';
-export { default as flexWrap } from './flex-wrap';
-export { default as flex } from './flex';
-export { default as float } from './float';
-export { default as fontSize } from './font-size';
-export { default as fontWeight } from './font-weight';
-export { default as full } from './full';
-export { default as gap } from './gap';
-export { default as height } from './height';
-export { default as justifyContent } from './justify-content';
-export { default as letterSpacing } from './letter-spacing';
-export { default as line } from './line';
-export { default as lineHeight } from './line-height';
-export { default as marginAndPadding } from './margin-padding';
-export { default as maxHeight } from './max-height';
-export { default as maxWidth } from './max-width';
-export { default as minHeight } from './min-height';
-export { default as minWidth } from './min-width';
-export { default as objectFit } from './object-fit';
-export { default as opacity } from './opacity';
-export { default as order } from './order';
-export { default as orientation } from './orientation';
-export { default as overflow } from './overflow';
-export { default as position } from './position';
-export { default as rowGap } from './row-gap';
-export { default as square } from './square';
-export { default as textAlignLast } from './text-align-last';
-export { default as textAlign } from './text-align';
-export { default as textDecoration } from './text-decoration';
-export { default as textNormal } from './text-normal';
-export { default as transitionDelay } from './transition-delay';
-export { default as transition } from './transition';
-export { default as userSelect } from './user-select';
-export { default as verticalAlign } from './vertical-align';
-export { default as visibility } from './visibility';
-export { default as wordSpace } from './white-space';
-export { default as width } from './width';
-export { default as wordBreak } from './word-break';
-export { default as zIndex } from './z-index';
+export { default as alignContent } from './align-content';// alignContent
+export { default as alignItems } from './align-items';// alignItems
+export { default as alignSelf } from './align-self';// alignSelf
+export { default as bold } from './bold';// bold
+export { default as borderRadius } from './border-radius';// borderRadius
+export { default as borderStyle } from './border-style';// borderStyle
+export { default as border } from './border';// border
+export { default as boxSizing } from './box-sizing';// boxSizing
+export { default as circle } from './circle';// circle
+export { default as clearfix } from './clearfix';// clearfix
+export { default as color } from './color';// color
+export { default as columnGap } from './column-gap';// columnGap
+export { default as cursor } from './cursor';// cursor
+export { default as display } from './display';// display
+export { default as flexBasis } from './flex-basis';// flexBasis
+export { default as flexCenter } from './flex-center';// flexCenter
+export { default as flexDirection } from './flex-direction';// flexDirection
+export { default as flexJustAli } from './flex-justify-align';// flexJustAli
+export { default as flexNum } from './flex-num';// flexNum
+export { default as flexShrinkAndGrow } from './flex-shrink-grow';// flexShrinkAndGrow
+export { default as flexWrap } from './flex-wrap';// flexWrap
+export { default as flex } from './flex';// flex
+export { default as float } from './float';// float
+export { default as fontSize } from './font-size';// fontSize
+export { default as fontWeight } from './font-weight';// fontWeight
+export { default as full } from './full';// full
+export { default as gap } from './gap';// gap
+export { default as height } from './height';// height
+export { default as justifyContent } from './justify-content';// justifyContent
+export { default as letterSpacing } from './letter-spacing';// letterSpacing
+export { default as line } from './line';// line
+export { default as lineHeight } from './line-height';// lineHeight
+export { default as marginAndPadding } from './margin-padding';// marginAndPadding
+export { default as maxHeight } from './max-height';// maxHeight
+export { default as maxWidth } from './max-width';// maxWidth
+export { default as minHeight } from './min-height';// minHeight
+export { default as minWidth } from './min-width';// minWidth
+export { default as objectFit } from './object-fit';// objectFit
+export { default as opacity } from './opacity';// opacity
+export { default as order } from './order';// order
+export { default as orientation } from './orientation';// orientation
+export { default as overflow } from './overflow';// overflow
+export { default as position } from './position';// position
+export { default as rowGap } from './row-gap';// rowGap
+export { default as square } from './square';// square
+export { default as textAlignLast } from './text-align-last';// textAlignLast
+export { default as textAlign } from './text-align';// textAlign
+export { default as textDecoration } from './text-decoration';// textDecoration
+export { default as textNormal } from './text-normal';// textNormal
+export { default as transitionDelay } from './transition-delay';// transitionDelay
+export { default as transition } from './transition';// transition
+export { default as userSelect } from './user-select';// userSelect
+export { default as verticalAlign } from './vertical-align';// verticalAlign
+export { default as visibility } from './visibility';// visibility
+export { default as wordSpace } from './white-space';// wordSpace
+export { default as width } from './width';// width
+export { default as wordBreak } from './word-break';// wordBreak
+export { default as zIndex } from './z-index';// zIndex

@@ -16,10 +16,10 @@ const configList = [
 		input: 'src/script-use.js',
 		output: [
 			{
-				file: 'dist/script/gcss.js',
+				file: 'dist/script/auto-css.js',
 				exports: 'default',
 				format: 'iife',
-				name: 'Gcss',
+				name: 'AutoCss',
 			},
 			{
 				file: 'dist/script/index.js',

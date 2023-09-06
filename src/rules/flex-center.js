@@ -14,7 +14,7 @@ export default {
 		return {
 			name: 'flex',
 			order: 278,
-			css: ['display: flex', 'justify-content: center', 'align-items: center', 'align-content: center'],
+			css: ['display: flex', 'justify-content: center', 'align-items: center'],
 		};
 	},
     snippets(config){
