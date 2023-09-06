@@ -1,4 +1,4 @@
-# auto-css-plugin 根据className生成样式,便捷超乎想象。
+# auto-css-plugin 根据className生成样式,便捷超乎想象,丝般顺滑。
 
 ## DEMO
 [现在体验](https://zwq8299174.github.io/auto-css-plugin/)

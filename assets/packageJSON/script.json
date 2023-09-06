@@ -1,5 +1,5 @@
 {
-    "name": "css-generator-script",
+    "name": "auto-css-plugin",
     "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination",
     "version": "$VAR$",
     "license": "$VAR$",

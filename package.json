@@ -1,6 +1,6 @@
 {
     "name": "auto-css-plugin",
-    "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination",
+    "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination, It's silky smooth.",
     "version": "1.0.1",
     "license": "MIT",
     "bin": {
