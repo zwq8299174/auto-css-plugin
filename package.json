@@ -10,9 +10,22 @@
     "main": "./dist/webpack/index.js",
     "module": "./dist/webpack/index.js",
     "exports": {
-        "./webpack": "./dist/webpack/index.js",
-        "./vite": "./dist/vite/index.js",
-        "./script": "./dist/script/index.js"
+        ".":{
+            "import":"./dist/webpack/index.js",
+            "require":"./dist/webpack/index.js"
+        },
+        "./webpack":{
+            "import":"./dist/webpack/index.js",
+            "require":"./dist/webpack/index.js"
+        },
+        "./vite":{
+            "import":"./dist/vite/index.js",
+            "require":"./dist/vite/index.js"
+        },
+        "./script":{
+            "import":"./dist/script/index.js",
+            "require":"./dist/script/index.js"
+        }
     },
     "repository": {
         "type": "git",
