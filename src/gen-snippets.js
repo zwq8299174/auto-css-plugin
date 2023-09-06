@@ -2,11 +2,11 @@ import * as rules from './rules/index';
 import { readConfigFile } from './index';
 const fs = require('fs');
 const path = require('path');
-const ruleList = Object.values(rules);
 const config = readConfigFile();
+const ruleList = Object.values({ ...rules, ...config.modifyRules });
 let snippetObj = {};
 
-for (const r of [...ruleList, ...config.modifyRules]) {
+for (const r of ruleList) {
 	if (r.snippets) {
 		if (Object.prototype.toString.call(r.snippets) === '[object Function]') {
 			snippetObj = Object.assign(snippetObj, r.snippets(config));
