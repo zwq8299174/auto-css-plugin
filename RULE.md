@@ -951,11 +951,11 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
                 name: "primaryBox",
                 order: 900,
                 css: [
-                    "height:100px",
-                    "width:100px",
-                    "border-radius:20px",
-                    "background-color:red"
-                ]
+                        "height:100px",
+                        "width:100px",
+                        "border-radius:20px",
+                        "background-color:red"
+                    ]
                 };
             },
             snippets: {
@@ -985,20 +985,20 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
     //   minPixelValue: 1 // 不会被转换的最小值
     // },
     //函数必须返回num、unit字段
-    toAnyConfig: function ({ num, unit }) {
-     	if (num > 1 && (unit == 'px' || unit == undefined)) {
-     		return {
-     			num: (num / 100).toFixed(4),
-     			unit: 'rem',
-     		};
-     		// return {
-     		// 	num: (num / 375).toFixed(4),
-     		// 	unit: 'vw',
-     		// };
-     	}
-     	return {
-     		num,
-     		unit,
-     	};
+    toAnyConfig: ({ num, unit }) => {
+        if (num > 1 && (unit == "px" || unit == undefined)) {
+            return {
+                num: (num / 100).toFixed(4),
+                unit: "rem"
+            };
+            // return {
+            // 	num: (num / 375).toFixed(4),
+            // 	unit: 'vw',
+            // };
+        }
+        return {
+            num,
+            unit
+        };
     },
     ```

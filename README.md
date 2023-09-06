@@ -121,7 +121,7 @@ module.exports = {
    *  是否为所有css 添加 important
    */
   important: true, // 默认为 false
-  unit: "px" // 可选项。默认单位px,p是百分比
+  unit: "px", // 可选项。默认单位px,p是百分比
   //单位转换配置
   //可以是对象或者函数
   // toAnyConfig: {
@@ -131,22 +131,22 @@ module.exports = {
   //   minPixelValue: 1 // 不会被转换的最小值
   // },
   //函数必须返回num、unit字段
-  // toAnyConfig: function ({ num, unit }) {
-  // 	if (num > 1 && (unit == 'px' || unit == undefined)) {
-  // 		return {
-  // 			num: (num / 100).toFixed(4),
-  // 			unit: 'rem',
-  // 		};
-  // 		// return {
-  // 		// 	num: (num / 375).toFixed(4),
-  // 		// 	unit: 'vw',
-  // 		// };
-  // 	}
-  // 	return {
-  // 		num,
-  // 		unit,
-  // 	};
-  // },
+  toAnyConfig: ({ num, unit }) => {
+    if (num > 1 && (unit == "px" || unit == undefined)) {
+      return {
+        num: (num / 100).toFixed(4),
+        unit: "rem"
+      };
+      // return {
+      // 	num: (num / 375).toFixed(4),
+      // 	unit: 'vw',
+      // };
+    }
+    return {
+      num,
+      unit
+    };
+  }
 };
 ```
 
