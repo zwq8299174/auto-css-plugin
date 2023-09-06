@@ -48,7 +48,7 @@ webpack 或 vue-cli 用户请 下载本项目中配置文件 **[.auto.css.js](./
 
 cdn 用户请在函数中传入配置
 
-具体配置如下
+可参考如下配置:
 ``` javascript
 module.exports = {
   prefix: "x", // class前缀,防止和项目中其他样式及UI框架样式冲突，默认是'x'
