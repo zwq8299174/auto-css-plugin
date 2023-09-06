@@ -183,8 +183,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 图层高度
-
-      #### (index|z)-(m-)?(数值)
+    #### (index|z)-(m-)?(数值)
 
       ```css
       .x-index-9 {
@@ -198,10 +197,9 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
       }
       ```
 
-  > #### flex 相关
+> #### flex 相关
 
 - flex 系数
-
   #### flex-(数值|参数)
 
   ```css
@@ -217,7 +215,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex 组合属性
-
   #### flex-(主轴参数)-(交叉轴参数)
 
   ```css
@@ -234,7 +231,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex 换行
-
   #### flex-(参数)
 
   ```css
@@ -252,7 +248,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex 主轴
-
   #### (justify-content|jc|row)-(主轴参数)
 
   ```css
@@ -268,7 +263,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex 交叉轴
-
   #### (align-items|ai|col)-(交叉轴参数)
 
   ```css
@@ -284,7 +278,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex 项目交叉轴对其方式
-
   #### (align-self|self|as)-(参数)
 
   ```css
@@ -300,7 +293,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex(align-content)对齐方式
-
   #### (align-content|content|ac)-(参数)
 
   ```css
@@ -316,7 +308,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - flex 轴方向
-
   #### (flex)-(轴方向参数)
 
   ```css
@@ -342,7 +333,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 - flex 占用轴空间
-
   #### flex-basis-((数值(单位)?)|其他参数)
 
   ```css
@@ -358,19 +348,17 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - order 排序
+    #### order-(数值)
 
-      #### order-(数值)
+    ```css
+    .x-order-1 {
+    order: 1;
+    }
+    ```
 
-      ```css
-      .x-order-1 {
-      	order: 1;
-      }
-      ```
-
-  > #### 文字相关
+> #### 文字相关
 
 - 字体大小
-
   #### (font-size|fs|f|font)-(数值)(单位)?
 
   ```css
@@ -402,9 +390,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 - 文字水平对齐
-
   #### (text-align|text)-(参数)
-
   ```css
   .x-text-align-center {
     text-align: center;
@@ -415,7 +401,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 末行文字水平对齐
-
   #### (text-align-last|text-last)-(参数)
 
   ```css
@@ -457,7 +442,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 - 文字行数，超出隐藏
-
   #### (text-line|line)(-num)?
 
   ```css
@@ -483,7 +467,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 文字换行相关
-
   #### word-break-(参数)
 
   ```css
@@ -506,20 +489,20 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 
-- 文本修饰 #### (text-decoration|text)-(参数)
-  `css
-.x-text-decoration-underline {
-	text-decoration: underline;
-}
-.x-text-overline {
-	text-decoration: overline;
-}
-`
+- 文本修饰
+    #### (text-decoration|text)-(参数)
+    ```css
+    .x-text-decoration-underline {
+        text-decoration: underline;
+    }
+    .x-text-overline {
+        text-decoration: overline;
+    }
+    ```
 
-              > #### 位置及显示相关
+> #### 位置及显示相关
 
 - 定位
-
   #### (position|pos)-(定位参数)或直接定位参数
 
   ```css
@@ -535,7 +518,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 方向定位
-
   #### (方向[trblxy]top|right|bottom|left)-(m-)?-(数值)(单位)?
 
   ```css
@@ -555,7 +537,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - display
-
   #### (display|d)-(参数)
 
   ```css
@@ -578,7 +559,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 - 清除浮动
-
   #### (clear|clearfix)-(参数)
 
   ```css
@@ -595,7 +575,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 盒子模型
-
   #### (box-sizing|box)-(参数)
 
   ```css
@@ -608,9 +587,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - overflow
-
   #### overflow-(xy)?-(参数)
-
   ```css
   .x-overflow-x-hidden {
     overflow-x: hidden;
@@ -621,9 +598,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 显示隐藏
-
   #### visibility-(值)
-
   ```css
   .x-visibility-hidden {
     visibility: hidden;
@@ -634,7 +609,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 鼠标样式
-
   #### cursor-(参数)
 
   ```css
@@ -651,7 +625,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
       }
       ```
 
-  > #### 颜色相关
+> #### 颜色相关
 
 ##### 自带 white transparent blue black 可进行配置
 
@@ -676,7 +650,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 - 边框色
-
   ##### (border-color|border-c)-(伪类-)?(16 进制色[6 位或 3 位]|自定义颜色)(-透明度)?
 
   ```css
@@ -689,7 +662,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 透明度
-
   #### opacity-(0-100)
 
   ```css
@@ -701,7 +673,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 > #### 边框相关
 
 - 边框宽度(实线、颜色为配置中 borderColor 的颜色)
-
   #### (border|border-width|border-w)-(方向-)?(数值)(单位)?
 
   ```css
@@ -730,17 +701,19 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
     border-radius: 20px;
   }
   ```
-- 边框类型 #### (border-style|bs)-(参数)
-  `css
-.x-border-style-dashed {
-	border-style: dashed;
-}
-.x-bs-dotted {
-	border-style: dotted;
-}
-` > #### GAP 布局相关
-- 间距
+- 边框类型
+    #### (border-style|bs)-(参数)
+        ```css
+        .x-border-style-dashed {
+            border-style: dashed;
+        }
+        .x-bs-dotted {
+            border-style: dotted;
+        }
+        ``` 
+>#### GAP 布局相关
 
+- 间距
   #### gap-((数值(单位)?)|其他参数)
 
   ```css
@@ -759,7 +732,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 列间距
-
   #### column-gap-((数值(单位)?)|其他参数)
 
   ```css
@@ -774,23 +746,23 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 
-- 行间距 #### row-gap-((数值(单位)?)|其他参数)
-  `css
-.x-row-gap-20 {
-	row-gap: 20px;
-}
-.x-row-gap-20p {
-	row-gap: 20%;
-}
-.x-row-gap-unset {
-	row-gap: unset;
-}
-`
+- 行间距
+    #### row-gap-((数值(单位)?)|其他参数)
+        ```css
+        .x-row-gap-20 {
+            row-gap: 20px;
+        }
+        .x-row-gap-20p {
+            row-gap: 20%;
+        }
+        .x-row-gap-unset {
+            row-gap: unset;
+        }
+        ```
 
-          > #### 其他属性
+> #### 其他属性
 
 - 图片填充
-
   #### object-fit-(参数)
 
   ```css
@@ -800,7 +772,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - 鼠标选择
-
   #### (user-)?select-(参数)
 
   ```css
@@ -818,7 +789,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 > #### 变化相关
 
 - transition
-
   #### transition-?(property)-?(timing-function)-(duration)
 
   ```css
@@ -834,7 +804,6 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 
 - transition-delay
-
   #### delay-(duration)
 
   ```css
