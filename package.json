@@ -1,6 +1,6 @@
 {
     "name": "auto-css-plugin",
-    "description": "write class name,auto generate css",
+    "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination",
     "version": "1.0.0",
     "license": "MIT",
     "bin": {
@@ -10,7 +10,7 @@
     "main": "./dist/webpack/index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://jihulab.com/zwq8299174/auto-css-plugin.git"
+        "url": "git+https://github.com/zwq8299174/auto-css-plugin.git"
     },
     "files": [
         "dist/*",
