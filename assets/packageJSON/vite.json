@@ -1,0 +1,21 @@
+{
+    "name": "vite-plugin-css-generator",
+    "description": "css file generator only write class name",
+    "version": "$VAR$",
+    "license": "$VAR$",
+    "bin": {
+        "gen-snippets": "./gen-snippets"
+    },
+    "main": "./index.js",
+    "repository": "$VAR$",
+    "author": "$VAR$",
+    "bugs": "$VAR$",
+    "homepage": "$VAR$",
+    "keywords": [
+        "css",
+        "vue",
+        "react",
+        "vite-plugin"
+    ],
+    "dependencies": "$VAR$"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "auto-css-plugin",
+    "description": "write class name,auto generate css",
+    "version": "$VAR$",
+    "license": "$VAR$",
+    "bin": {
+        "gen-snippets": "./dist/webpack/gen-snippets"
+    },
+    "main": "./dist/webpack/index.js",
+    "repository": "$VAR$",
+    "author": "$VAR$",
+    "bugs": "$VAR$",
+    "homepage": "$VAR$",
+    "keywords": [
+        "css",
+        "vue",
+        "react",
+        "weixin",
+        "mini-program",
+        "webpack-plugin"
+    ],
+    "dependencies": "$VAR$"
+}

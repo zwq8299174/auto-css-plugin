@@ -1,0 +1,22 @@
+{
+    "name": "css-generator-script",
+    "description": "css generator by class",
+    "version": "$VAR$",
+    "license": "$VAR$",
+    "bin": {
+        "gen-snippets": "./gen-snippets"
+    },
+    "main": "./index.js",
+    "repository": "$VAR$",
+    "author": "$VAR$",
+    "bugs": "$VAR$",
+    "homepage": "$VAR$",
+    "keywords": [
+        "css",
+        "vue",
+        "react",
+        "weixin",
+        "vite-plugin"
+    ],
+    "dependencies": "$VAR$"
+}
