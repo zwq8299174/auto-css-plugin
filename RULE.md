@@ -184,18 +184,19 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 
 - 图层高度
     #### (index|z)-(m-)?(数值)
+    ```css
+    .x-index-9 {
+        z-index: 9;
+    }
 
-      ```css
-      .x-index-9 {
-      	z-index: 9;
-      }
-      .x-index-m-9 {
-      	z-index: -9;
-      }
-      .x-z-9 {
-      	z-index: 9;
-      }
-      ```
+    .x-index-m-9 {
+        z-index: -9;
+    }
+
+    .x-z-9 {
+        z-index: 9;
+    }
+    ```
 
 > #### flex 相关
 
@@ -352,7 +353,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 
     ```css
     .x-order-1 {
-    order: 1;
+        order: 1;
     }
     ```
 
@@ -617,13 +618,13 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   }
   ```
 
-- 垂直对齐 #### vertical-align-(参数)
-
-      ```css
-      .x-vertical-align-top {
-      	vertical-align: top;
-      }
-      ```
+- 垂直对齐
+    #### vertical-align-(参数)
+    ```css
+    .x-vertical-align-top {
+    vertical-align: top;
+    }
+    ```
 
 > #### 颜色相关
 
@@ -665,7 +666,7 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   #### opacity-(0-100)
 
   ```css
-  opacity-20 {
+  .x-opacity-20 {
     opacity: 0.2;
   }
   ```
@@ -703,14 +704,14 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
   ```
 - 边框类型
     #### (border-style|bs)-(参数)
-        ```css
-        .x-border-style-dashed {
-            border-style: dashed;
-        }
-        .x-bs-dotted {
-            border-style: dotted;
-        }
-        ``` 
+    ```css
+    .x-border-style-dashed {
+        border-style: dashed;
+    }
+    .x-bs-dotted {
+        border-style: dotted;
+    }
+    ``` 
 >#### GAP 布局相关
 
 - 间距
@@ -748,17 +749,17 @@ hover|link|visited|active|focus|focus-within 等伪类 后接属性 如 hover:c-
 
 - 行间距
     #### row-gap-((数值(单位)?)|其他参数)
-        ```css
-        .x-row-gap-20 {
-            row-gap: 20px;
-        }
-        .x-row-gap-20p {
-            row-gap: 20%;
-        }
-        .x-row-gap-unset {
-            row-gap: unset;
-        }
-        ```
+    ```css
+    .x-row-gap-20 {
+        row-gap: 20px;
+    }
+    .x-row-gap-20p {
+        row-gap: 20%;
+    }
+    .x-row-gap-unset {
+        row-gap: unset;
+    }
+    ```
 
 > #### 其他属性
 
