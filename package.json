@@ -1,7 +1,7 @@
 {
     "name": "auto-css-plugin",
     "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination, It's silky smooth.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "bin": {
         "css-generator": "./dist/webpack/css-generator",
@@ -10,21 +10,21 @@
     "main": "./dist/webpack/index.js",
     "module": "./dist/webpack/index.js",
     "exports": {
-        ".":{
-            "import":"./dist/webpack/index.js",
-            "require":"./dist/webpack/index.js"
+        ".": {
+            "import": "./dist/webpack/index.js",
+            "require": "./dist/webpack/index.js"
         },
-        "./webpack":{
-            "import":"./dist/webpack/index.js",
-            "require":"./dist/webpack/index.js"
+        "./webpack": {
+            "import": "./dist/webpack/index.js",
+            "require": "./dist/webpack/index.js"
         },
-        "./vite":{
-            "import":"./dist/vite/index.js",
-            "require":"./dist/vite/index.js"
+        "./vite": {
+            "import": "./dist/vite/index.js",
+            "require": "./dist/vite/index.js"
         },
-        "./script":{
-            "import":"./dist/script/index.js",
-            "require":"./dist/script/index.js"
+        "./script": {
+            "import": "./dist/script/index.js",
+            "require": "./dist/script/index.js"
         }
     },
     "repository": {
@@ -46,9 +46,12 @@
         "@rollup/plugin-node-resolve": "^13.0.0",
         "@rollup/plugin-replace": "^3.0.0",
         "bumpp": "^7.1.1",
+        "html-webpack-plugin": "^5.5.0",
         "jest": "^26.0.1",
+        "nodemon": "^3.0.1",
         "rollup": "^2.23.0",
-        "rollup-plugin-terser": "^6.1.0"
+        "rollup-plugin-terser": "^6.1.0",
+        "webpack": "^4.0.0 || ^5.0.0"
     },
     "dependencies": {
         "chokidar": "^3.5.3",
@@ -56,10 +59,15 @@
         "glob": "^10.3.3",
         "shelljs": "^0.8.5"
     },
+    "peerDependencies": {
+        "html-webpack-plugin": "^5.0.0",
+        "webpack": "^4.0.0 || ^5.0.0"
+    },
     "scripts": {
         "build": "rollup -c && node build/index.js",
         "dev": "rollup -c -w",
-        "release": "npx bumpp package.json --commit --push --tag"
+        "release": "npx bumpp package.json --commit --push --tag",
+        "watch": "nodemon --watch src --exec \"npm run build && yalc push\""
     },
     "prettier": {
         "trailingComma": "all",
