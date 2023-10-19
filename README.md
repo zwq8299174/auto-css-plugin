@@ -1,5 +1,10 @@
 # auto-css-plugin 根据className生成样式,便捷超乎想象,丝般顺滑。
 
+## TODO
+1、项目中多人编辑冲突问题
+2、webpack5兼容问题
+3、windows兼容问题
+
 ## DEMO
 [现在体验](https://zwq8299174.github.io/auto-css-plugin/)
 
