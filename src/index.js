@@ -6,7 +6,9 @@ const { performance } = require('perf_hooks');
 const fs = require('fs');
 const path = require('path');
 const chokidar = require('chokidar');
-const glob = require('glob');
+const {
+    globSync
+} = require('glob');
 const shelljs = require('shelljs');
 let hotReload = false;
 
@@ -30,7 +32,8 @@ function readFile(path) {
 
 function getAllFileClassStr() {
 	const globSyncStr = getConfig(EXT_NAME).join('|');
-	const files = glob.sync(path.join(process.cwd(), `./${getConfig(DIR_PATH)}/**/*.@(${globSyncStr})`));
+    const globSyncPath = path.join(process.cwd(), `./${getConfig(DIR_PATH)}/**/*.@(${globSyncStr})`).replace(/\\/g,'/');
+	const files = globSync(globSyncPath);
 	return files.reduce((t, c) => t + readFile(path.resolve(c)), '');
 }
 
