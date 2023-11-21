@@ -36,7 +36,7 @@ module.exports = {
 	 * 可变单位 v 的转换方式
 	 * 例如 w-10 => 10 / 16 =>  width: 0.625rem
 	 */
-	// vToAny: {
+	// toAnyConfig: {
 	//   unit: 'rem', // 默认转换后的单位
 	//   rootValue: 16, // 表示根元素字体大小或基于输入参数返回根元素字体大小 1px -> 1/16rem
 	//   unitPrecision: 5, // 允许小数单位精度
