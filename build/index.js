@@ -27,7 +27,7 @@ function genMainFile() {
 		const [, pathName] = item.name.match(/^(.*)\.json$/);
 		console.log(`created package.json from ${item.name}`);
 		mdFileList.forEach((mdFilePath) => {
-			const [, filename] = mdFilePath.match(/^.*\/(.+)$/);
+			const [, filename] = mdFilePath.replace(/\\/g, '/').match(/^.*\/(.+)$/);
 			fs.copyFileSync(mdFilePath, resolve(`../dist/${pathName}/${filename}`));
 		});
 		fs.writeFileSync(resolve(`../dist/${pathName}/package.json`), JSON.stringify(obj, null, '\t'));
