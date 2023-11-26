@@ -57,7 +57,7 @@
         "chokidar": "^3.5.3",
         "commander": "^11.0.0",
         "decimal.js": "^10.4.3",
-        "glob": "^10.3.13",
+        "glob": "^10.3.10",
         "shelljs": "^0.8.5"
     },
     "peerDependencies": {
