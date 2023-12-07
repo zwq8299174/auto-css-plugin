@@ -11,15 +11,15 @@ function getCss(property, timing, num) {
 export default {
 	regExp() {
 		const prefix = getConfig(PREFIX);
-		return new RegExp(`^${prefix}-transition-((?<property>${TRANSITION_PROPERTY_ENUM_STR})-)((?<timing>${TIMING_FUNCTION_ENUM_STR})-)?(?<num>${NONNEGATIVE_NUMBER_REGEX_STR})?$`);
+		return new RegExp(`^${prefix}-transition-((?<property>${TRANSITION_PROPERTY_ENUM_STR})-)((?<timing>${TIMING_FUNCTION_ENUM_STR})-)?(?<value>${NONNEGATIVE_NUMBER_REGEX_STR})?$`);
 	},
 	render({ groups }) {
-		let { property, timing, num } = groups;
+		let { property, timing, value } = groups;
 		return {
 			name: 'transition',
 			order: 1100,
-			num,
-			css: getCss(property, timing, num),
+			num: value,
+			css: getCss(property, timing, value),
 		};
 	},
 	snippets(config) {

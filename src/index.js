@@ -64,6 +64,8 @@ function logUseTime() {
 
 export function init(compiler) {
 	setTimeStart();
+    // console.log('getAllFileClassStr');
+    // console.log(getAllFileClassStr());
 	filterClassNames(getAllFileClassStr());
 	wirteToFile(compiler);
 	setTimeEnd();

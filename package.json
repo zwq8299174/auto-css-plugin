@@ -1,7 +1,7 @@
 {
     "name": "auto-css-plugin",
     "description": "auto-css-plugin generates styles based on className, which is convenient beyond imagination, It's silky smooth.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "license": "MIT",
     "bin": {
         "css-generator": "./dist/webpack/css-generator",

@@ -43,6 +43,7 @@ const configList = [
 		output: {
 			file: 'dist/webpack/index.js',
 			format: 'cjs',
+            sourcemap: true,
 		},
 	},
 	{

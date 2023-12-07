@@ -1,21 +1,20 @@
 /**
  * order 999
  */
-import { PREFIX, toRegexStr } from '../constant';
+import { PREFIX, toRegexStr, NONNEGATIVE_NUMBER_REGEX_STR } from '../constant';
 import { getConfig } from '../config';
-const className = ['index', 'z'];
+const className = ['index', 'z', 'z-index'];
 
 export default {
+	name: 'zIndex',
 	regExp() {
 		const prefix = getConfig(PREFIX);
-		return new RegExp(`^${prefix}-(${toRegexStr(className)})-(?<isMinus>m-)?(?<value>0|[1-9]\d*)$`);
+		return new RegExp(`^${prefix}-(${toRegexStr(className)})-(?<value>${NONNEGATIVE_NUMBER_REGEX_STR})$`);
 	},
 	render({ groups }) {
-		let { isMinus, value } = groups;
-		if (isMinus) {
-			value = 0 - value;
-		}
-		return { name: 'zIndex', order: 999, num: value, css: [`z-index: ${value}`] };
+		let { value } = groups;
+        console.log(value);
+		return { name: 'zIndex', order: 999, num:value, css: [`z-index: ${value}`] };
 	},
 	snippets(config) {
 		return {

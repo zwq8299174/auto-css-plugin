@@ -33,30 +33,30 @@ class AutoCssPlugin {
 		});
 		this.writeCss(htmlData, callback);
 	}
-	main(compiler) {
-		if (compiler.hooks) {
-			// webpack 4 support
-			compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation) => {
-				if (compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing) {
-					compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(PLUGIN_NAME, (htmlData, callback) => {
-						this.writeCss(htmlData, callback);
-					});
-				} else {
-					const HtmlWebpackPlugin = require('html-webpack-plugin');
-					HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(PLUGIN_NAME, (htmlData, callback) => {
-						this.writeCss(htmlData, callback);
-					});
-				}
-			});
-		} else {
-			// webpack 3 support
-			compiler.plugin('compilation', (compilation) => {
-				compilation.plugin('html-webpack-plugin-before-html-processing', (htmlData, callback) => {
-					this.writeCss(htmlData, callback);
-				});
-			});
-		}
-	}
+	// main(compiler) {
+	// 	if (compiler.hooks) {
+	// 		// webpack 4 support
+	// 		compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation) => {
+	// 			if (compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing) {
+	// 				compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync(PLUGIN_NAME, (htmlData, callback) => {
+	// 					this.writeCss(htmlData, callback);
+	// 				});
+	// 			} else {
+	// 				const HtmlWebpackPlugin = require('html-webpack-plugin');
+	// 				HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(PLUGIN_NAME, (htmlData, callback) => {
+	// 					this.writeCss(htmlData, callback);
+	// 				});
+	// 			}
+	// 		});
+	// 	} else {
+	// 		// webpack 3 support
+	// 		compiler.plugin('compilation', (compilation) => {
+	// 			compilation.plugin('html-webpack-plugin-before-html-processing', (htmlData, callback) => {
+	// 				this.writeCss(htmlData, callback);
+	// 			});
+	// 		});
+	// 	}
+	// }
 	apply(compiler) {
 		compiler.hooks.afterPlugins.tap(PLUGIN_NAME, (compilation) => {
 			init(compiler);
