@@ -91,8 +91,8 @@ module.exports = {
     transparent: "transparent"
   },
   borderColor: "#ddd",
-  dirPath: "src", // 必填项。源码根目录(必须存在此目录),默认为src,开发热更新使用。
-  //generate: 'src/styles/auto.css', // 可选配置,样式文件生成地址,为空则直接注入到html文件中,不为空则将样式文件生成到指定位置,需自行引入。
+  dirPath: "/src", // 必填项。源码根目录(必须存在此目录),默认为/src,开发热更新使用。
+  generate: '/src/styles/auto.css', // 必填项,样式文件生成地址,需自行引入。
   type: "vue", // 必填项。项目类型 vue | react | d-mini-program (钉钉小程序) | wx-mini-program(微信小程序) | html
   pageWidth: "750", // 可选项。默认页面宽度 750，单位像素
   /**
