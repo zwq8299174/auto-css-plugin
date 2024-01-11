@@ -2,6 +2,7 @@
 
 
 export default [
+    'all',
     'color',
     'background-color',
     'border-color',

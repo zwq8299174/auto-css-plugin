@@ -13,7 +13,6 @@ export default {
 	},
 	render({ groups }) {
 		let { value } = groups;
-        console.log(value);
 		return { name: 'zIndex', order: 999, num:value, css: [`z-index: ${value}`] };
 	},
 	snippets(config) {

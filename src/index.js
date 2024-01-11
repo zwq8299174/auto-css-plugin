@@ -32,7 +32,7 @@ function readFile(path) {
 
 function getAllFileClassStr() {
 	const globSyncStr = getConfig(EXT_NAME).join('|');
-    const globSyncPath = path.join(process.cwd(), `./${getConfig(DIR_PATH)}/**/*.@(${globSyncStr})`).replace(/\\/g,'/');
+    const globSyncPath = path.join(process.cwd(), `.${getConfig(DIR_PATH)}/**/*.@(${globSyncStr})`).replace(/\\/g,'/');
 	const files = globSync(globSyncPath);
 	return files.reduce((t, c) => t + readFile(path.resolve(c)), '');
 }
@@ -42,7 +42,7 @@ function wirteToFile(compiler) {
 	let outPath = '';
 	const isGen = getConfig(GENERATE);
 	if (isGen) {
-		outPath = path.resolve(getConfig(GENERATE));
+		outPath = path.resolve(`.${getConfig(GENERATE)}`);
 		const cssDirPath = path.resolve(outPath, '..');
 		if (!fs.existsSync(cssDirPath)) {
 			shelljs.mkdir('-p', cssDirPath);
@@ -89,7 +89,8 @@ export function readConfigFile() {
 export function hotReloadwatcher(compiler) {
 	hotReload = true;
 	const regStr = getConfig(EXT_NAME).join('|');
-	const watcher = chokidar.watch(path.resolve(getConfig(DIR_PATH)), {
+    console.log(path.resolve(`.${getConfig(DIR_PATH)}`));
+	const watcher = chokidar.watch(path.resolve(`.${getConfig(DIR_PATH)}`), {
 		// ignored: new RegExp(`^.*\\.(?:(?!(${regStr})).)+$`),
 		ignored: new RegExp(`^\\/([^/]+\\/)*[^/]*\\.((?!${regStr}).)+$`),
 		persistent: true,
