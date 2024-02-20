@@ -58,32 +58,42 @@ class AutoCssPlugin {
 	// 	}
 	// }
 	apply(compiler) {
-		compiler.hooks.afterPlugins.tap(PLUGIN_NAME, (compilation) => {
-			init(compiler);
-			if (process.env.NODE_ENV === 'development') {
-				hotReloadwatcher(compiler);
-			}
-		});
-		if (!this.options || this.options.generate) return;
-		// this.main(compiler);
-		// compiler.hooks.watchRun.tapAsync(PLUGIN_NAME, (compiler, callback) => {
-		// 	this.main(compiler);
-		// 	callback();
-		// });
-		compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
-			compilation.hooks.processAssets.tapAsync(
-				{
-					name: PLUGIN_NAME,
-					stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
-				},
-				async (unusedAssets, callback) => {
-					// 把 HTML 文件添加到文件依赖列表，好让 Webpack 去监听 HTML 模块文件，在 HTML 模版文件发生变化时重新启动一次编译
-                    console.log(222222);
-					compilation.fileDependencies.add(path.resolve(process.cwd(), this.options.generate));
-					callback();
-				},
-			);
-		});
+		if (compiler.hooks) {
+			compiler.hooks.afterPlugins.tap(PLUGIN_NAME, (compilation) => {
+				init(compiler);
+				if (process.env.NODE_ENV === 'development') {
+					hotReloadwatcher(compiler);
+				}
+			});
+
+			if (!this.options || this.options.generate) return;
+			// this.main(compiler);
+			// compiler.hooks.watchRun.tapAsync(PLUGIN_NAME, (compiler, callback) => {
+			// 	this.main(compiler);
+			// 	callback();
+			// });
+			compiler.hooks.thisCompilation.tap(PLUGIN_NAME, (compilation) => {
+				compilation.hooks.processAssets.tapAsync(
+					{
+						name: PLUGIN_NAME,
+						stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
+					},
+					async (unusedAssets, callback) => {
+						// 把 HTML 文件添加到文件依赖列表，好让 Webpack 去监听 HTML 模块文件，在 HTML 模版文件发生变化时重新启动一次编译
+						console.log(222222);
+						compilation.fileDependencies.add(path.resolve(process.cwd(), this.options.generate));
+						callback();
+					},
+				);
+			});
+		} else {
+			compiler.plugin('compilation', (compilation) => {
+				init(compiler);
+				if (process.env.NODE_ENV === 'development') {
+					hotReloadwatcher(compiler);
+				}
+			});
+		}
 	}
 }
 module.exports = AutoCssPlugin;

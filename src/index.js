@@ -70,7 +70,11 @@ export function init(compiler) {
 	wirteToFile(compiler);
 	setTimeEnd();
 	if (compiler) {
-		compiler.hooks.done.tap('auto-css-plugin-done', logUseTime);
+        if (compiler.hooks) {
+            compiler.hooks.done.tap('auto-css-plugin-done', logUseTime);
+        }else{
+            compiler.plugin('done', logUseTime);
+        }
 	} else {
 		logUseTime();
 	}

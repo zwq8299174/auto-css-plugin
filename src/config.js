@@ -11,6 +11,10 @@ const runType =
 					[EXT_NAME]: ['vue'],
 					reg: /(?:(?<=class=(["']))[\s\S]*?(?=\1))|((?<=class={)[\s\S]*?(?=}))/gi,
 				},
+                nvue: {
+					[EXT_NAME]: ['nvue'],
+					reg: /(?:(?<=class=(["']))[\s\S]*?(?=\1))|((?<=class={)[\s\S]*?(?=}))/gi,
+				},
 				react: {
 					[EXT_NAME]: ['tsx', 'jsx'],
 					reg: /(?:(?<=className=(["']))[\s\S]*?(?=\1))|((?<=className={)[\s\S]*?(?=}))/gi,
